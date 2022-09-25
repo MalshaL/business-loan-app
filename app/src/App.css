@@ -1,0 +1,47 @@
+
+.App-header {
+  background-color: #292C31;
+  color: white;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  font-size: calc(8px + 2vmin);
+}
+
+.App-header > p {
+  margin-bottom: 0;
+  margin-left: 5vw;
+}
+
+.form {
+  margin: 3vh 5vw;
+}
+
+.form-heading {
+  text-align: center;
+}
+
+.form-business {
+  background-color: #f5f5f5;
+  padding: 0.25vmin;
+}
+
+.form-business-body {
+  background-color: white;
+  padding: 2vmin;
+  /*font-weight: bold;*/
+}
+
+.form-radio-group {
+  margin: 2vh 0;
+}
+
+.balance-table {
+  margin-top: 2vh;
+}
+
+.submit-btn {
+  margin-top: 2vh;
+}
