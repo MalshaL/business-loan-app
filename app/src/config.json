@@ -1,0 +1,9 @@
+{
+    "USER_SERVICE": "http://localhost:5001/user",
+    "GET_USER_EP": "/getUser",
+    "LOAN_SERVICE": "http://localhost:5002/loan",
+    "NEW_APPLICATION_EP": "/newApplication",
+    "GET_APPROVAL_EP": "/getApproval",
+    "ACCOUNTING_SERVICE": "http://localhost:5003/accounts",
+    "GET_BALANCE_SHEET_EP": "/balanceSheet"
+}

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import json
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ def get_balance_sheet():
     data_file = open('mock-data.json')
     data = json.load(data_file)
     data_file.close()
-    return data
+    return jsonify({'data': data})
 
 
 if __name__ == '__main__':
