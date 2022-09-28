@@ -13,6 +13,7 @@ export default function ApplicationForm() {
         email: '',
         estYear: '',
         empCount: '',
+        loanAmount: '',
         accProvider: ''
     });
     const [balanceSheet, setBalanceSheet] = useState();
@@ -54,7 +55,6 @@ export default function ApplicationForm() {
                 setBalanceSheet(response.data.data.sheet)
                 console.log(response.data.data.sheet)
             });
-        console.log(user);
     }
 
     // clear fields and enable input form
@@ -65,6 +65,7 @@ export default function ApplicationForm() {
             email: '',
             estYear: '',
             empCount: '',
+            loanAmount: '',
             accProvider: ''
         });
         form.resetFields();
@@ -73,7 +74,14 @@ export default function ApplicationForm() {
 
     // send loan application to backend
     function submitApplication() {
-        console.log('In submit');
+        let baseUrl = config.LOAN_SERVICE + config.GET_APPROVAL_EP
+        let data = {'user': user, 'data': balanceSheet}
+        axios.post(baseUrl, JSON.stringify(data), {
+            headers: {'Content-Type': 'application/json'}
+        })
+            .then((response)=>{
+                console.log(response)
+            });
     }
 
     return (
@@ -105,6 +113,12 @@ export default function ApplicationForm() {
                             <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                                 <Form.Item label={"No. of Employees"} name={"business-emp"}>
                                     <Input onChange={handleInput('empCount')} disabled={isDisabled}/>
+                                </Form.Item>
+                            </Col>
+                            <Col xs={24} sm={24} md={12} lg={12} xl={12}>
+                                <Form.Item label={"Loan Amount"} name={"loan-amount"}
+                                           rules={[{required:true, message:"Please enter the loan amount"}]}>
+                                    <Input onChange={handleInput('loanAmount')} disabled={isDisabled}/>
                                 </Form.Item>
                             </Col>
                         </Row>

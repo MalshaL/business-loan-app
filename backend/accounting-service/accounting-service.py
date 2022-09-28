@@ -11,8 +11,7 @@ def get_balance_sheet():
     if request.method == 'OPTIONS':
         return _build_preflight_response()
     elif request.method == 'POST':
-        print(request.json)
-        # generate user id
+        # get user id
         uid = random.randint(10000, 99999)
         # obtain account provider for the user
         acc_provider = request.json['accProvider']

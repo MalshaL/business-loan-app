@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
 
 @app.route("/engine/approve", methods=['POST'])
 def get_loan_approval():
-    return "approval"
+    return jsonify({'approval': 'yes'})
 
 
 if __name__ == '__main__':
