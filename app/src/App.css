@@ -31,7 +31,6 @@
 .form-business-body {
   background-color: white;
   padding: 2vmin;
-  /*font-weight: bold;*/
 }
 
 .form-radio-group {
@@ -48,4 +47,14 @@
 
 .reset-btn {
   margin-left: 2vw;
+}
+
+.app-outcome-body {
+  background-color: white;
+  padding: 2vmin;
+  text-align: center;
+}
+
+.app-outcome-heading {
+  margin-bottom: 6vh;
 }

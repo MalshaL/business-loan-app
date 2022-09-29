@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, make_response, request
-import json
 import requests
 
 
@@ -18,7 +17,7 @@ def get_approval():
     elif request.method == 'POST':
         balance_data = request.json['data']
         user_data = request.json['user']
-        loan_amount = user_data['loanAmount']
+        loan_amount = float(user_data['loanAmount'])
 
         # calculate profit and average assets in last 12 months
         profit, avg_assets = _get_balance_summary(balance_data)
@@ -33,11 +32,13 @@ def get_approval():
             'est_year': user_data['estYear'],
             'profit_pa': profit,
             'avg_assets_pa': avg_assets,
-            'preassess_val': preassessment_value
+            'preassess_val': preassessment_value,
+            'loan_amount': loan_amount
         }
 
         # connect to decision engine
-        response = requests.post(url='http://localhost:3005/engine/approve', data=params).json()
+        response = requests.post(url='http://localhost:3005/engine/approve', json=params).json()
+        print(response)
         return _build_response(jsonify(response))
 
 
