@@ -37,7 +37,7 @@ def get_approval():
         }
 
         # connect to decision engine
-        response = requests.post(url='http://localhost:3005/engine/approve', json=params).json()
+        response = requests.post(url='http://dec_engine:3005/engine/approve', json=params).json()
         print(response)
         return _build_response(jsonify(response))
 

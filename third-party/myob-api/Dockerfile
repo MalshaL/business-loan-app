@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt --use-deprecated=legacy-resolver
 COPY . /myob_api
 EXPOSE 3007
 ENTRYPOINT ["python"]
-CMD ["main.py"]
+CMD ["main.py", "--host=0.0.0.0"]

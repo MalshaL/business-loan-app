@@ -7,4 +7,4 @@ RUN pip install requests
 COPY . /acc_service
 EXPOSE 5003
 ENTRYPOINT ["python"]
-CMD ["accounting-service.py"]
+CMD ["accounting-service.py", "--host=0.0.0.0"]

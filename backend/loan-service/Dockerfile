@@ -7,4 +7,4 @@ RUN pip install requests
 COPY . /loan_service
 EXPOSE 5002
 ENTRYPOINT ["python"]
-CMD ["loan-service.py"]
+CMD ["loan-service.py", "--host=0.0.0.0"]

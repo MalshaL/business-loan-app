@@ -21,9 +21,9 @@ def get_balance_sheet():
         # call third party api to get balance sheet
         response = ''
         if acc_provider == 'xero':
-            response = requests.post(url='http://localhost:3006/financialStatements/balanceSheet', data=params).json()
+            response = requests.post(url='http://xero_api:3006/financialStatements/balanceSheet', data=params).json()
         elif acc_provider == 'myob':
-            response = requests.post(url='http://localhost:3007/report/balanceSheetSummary', data=params).json()
+            response = requests.post(url='http://myob_api:3007/report/balanceSheetSummary', data=params).json()
         print(response)
         return _build_response(jsonify(response))
     else:

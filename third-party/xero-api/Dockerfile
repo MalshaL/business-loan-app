@@ -6,4 +6,4 @@ RUN pip install -r requirements.txt --use-deprecated=legacy-resolver
 COPY . /xero_api
 EXPOSE 3006
 ENTRYPOINT ["python"]
-CMD ["main.py"]
+CMD ["main.py", "--host=0.0.0.0"]

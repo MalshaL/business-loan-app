@@ -7,4 +7,4 @@ RUN pip install requests
 COPY . /user_service
 EXPOSE 5001
 ENTRYPOINT ["python"]
-CMD ["user-service.py"]
+CMD ["user-service.py", "--host=0.0.0.0"]
