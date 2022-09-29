@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  accounting-service:
+    build: backend/accounting-service
+    ports:
+      - "5003:5003"
+  loan-service:
+    build: backend/loan-service
+    ports:
+    - "5002:5002"
+  user-service:
+    build: backend/user-service
+    ports:
+    - "5001:5001"
+  dec-engine:
+    build: third-party/decision-engine
+    ports:
+    - "3005:3005"
+  xero-api:
+    build: third-party/xero-api
+    ports:
+    - "3006:3006"
+  myob-api:
+    build: third-party/myob-api
+    ports:
+    - "3007:3007"
+
