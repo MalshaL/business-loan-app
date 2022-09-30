@@ -15,6 +15,8 @@ The application contains the following components:
 2. Backend made of Python Flask microservices
 3. Mock third party services made with Python Flask framework
 
+![Architecture](App-architecture.png)
+
 ### Frontend
 
 The frontend is built using React and Ant Design.

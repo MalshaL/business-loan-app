@@ -12,7 +12,8 @@ def get_balance_sheet():
         return _build_preflight_response()
     elif request.method == 'POST':
         # get user id
-        uid = random.randint(10000, 99999)
+        uid_response = requests.post(url='http://user_service:5001/user/getUser', data=request.get_json()).json()
+        uid = uid_response['uid']
         # obtain account provider for the user
         acc_provider = request.json['accProvider']
         # set user id as parameter to be passed to third party

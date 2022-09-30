@@ -5,11 +5,6 @@ import requests
 app = Flask(__name__)
 
 
-@app.route("/loan/newApplication")
-def save_new_application():
-    return "app id"
-
-
 @app.route("/loan/getApproval", methods=['POST', 'OPTIONS'])
 def get_approval():
     if request.method == 'OPTIONS':
@@ -77,7 +72,7 @@ def _get_preassessment_value(profit, avg_assets, loan_amount):
 
     if profit > 0:
         preassessment_value = 60
-    elif avg_assets > loan_amount:
+    if avg_assets > loan_amount:
         preassessment_value = 100
     return preassessment_value
 
