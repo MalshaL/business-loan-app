@@ -56,3 +56,12 @@ Run the application:
 ```
 docker compose up
 ```
+
+## Future improvements
+
+Several features and improvements can be done in future to enhance the project structure and features.
+
+1. Use an event-driven architecture using a message queue or Kafka to reduce coupling among microservices
+2. Use flask-marshmallow to map object models between frontend and backend.
+3. Add testing to verify application processes.
+4. Use Json files as a simple data store.
